@@ -1,10 +1,9 @@
-
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { NativeAudio } from '@ionic-native/native-audio';
 
 @Injectable()
-export class SmartAudioProvider {
+export class SmartAudio{
 
     audioType: string = 'html5';
     sounds: any = [];

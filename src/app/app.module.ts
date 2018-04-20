@@ -9,7 +9,6 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
-import {SmartAudio} from '../providers/smart-audio';
 import {NativeAudio} from '@ionic-native/native-audio';
 
 //Modules
@@ -28,7 +27,8 @@ import {UserProvider} from '../providers/user/user';
 import {DckProvider} from '../providers/dck/dck';
 
 import {ProgressBarComponent} from '../components/progress-bar/progress-bar';
-import {SmartAudioProvider} from '../providers/smart-audio/smart-audio';
+import {SmartAudio} from "../providers/smart-audio/smart-audio";
+// import {SmartAudioProvider} from '../providers/smart-audio/smart-audio';
 
 @NgModule({
     declarations: [
@@ -63,9 +63,9 @@ import {SmartAudioProvider} from '../providers/smart-audio/smart-audio';
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         UserProvider,
         DckProvider,
-        SmartAudioProvider,
-        SmartAudio,
+        // SmartAudioProvider,
         NativeAudio,
+        SmartAudio,
     ]
 })
 export class AppModule {

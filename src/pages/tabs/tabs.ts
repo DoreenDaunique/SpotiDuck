@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SmartAudio } from '../../providers/smart-audio';
+import { SmartAudio } from '../../providers/smart-audio/smart-audio';
 
 import { HomePage } from '../home/home';
 
