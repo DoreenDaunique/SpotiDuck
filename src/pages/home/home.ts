@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import {PochettePage} from "../pochette/pochette";
 
 @Component({
   selector: 'page-home',
@@ -10,7 +13,7 @@ export class HomePage {
     currentTrack: any;
     progressInterval: any;
 
-    constructor() {
+    constructor(public navCtrl: NavController) {
 
         this.tracks = [
             {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
@@ -74,6 +77,10 @@ export class HomePage {
 
         this.playTrack(this.tracks[index]);
 
+    }
+
+    gotoPochette() {
+        this.navCtrl.setRoot(PochettePage);
     }
 
 }
