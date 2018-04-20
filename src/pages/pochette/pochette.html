@@ -10,9 +10,37 @@
 </ion-header>
 
 
-<ion-content  padding>
-    <button (click)="dismiss()">ICI</button>
-    azertyuio
-        <strong>{{title}}</strong> {{artist}}
+<ion-content fullscreen>
+    <!-- <button (click)="dismiss()">ICI</button> -->
+        <!-- <strong>{{title}}</strong> {{artist}} -->
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-1>
+              <button clear ion-button icon-only color="light" (click)="dismiss()">
+                <ion-icon name="arrow-down"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-11 color="light">
+              <p text-center color="light"><span text-uppercase>Lecture à partir de playlist</span><br>Nom de la playlist par auteur</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <ion-img  width="300" height="300" src="https://i.scdn.co/image/040d9df38de7966d150b8495c0dc466b7d2950d9"></ion-img>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col text-center>
+              <h3 text-center>{{title}}</h3>
+              <p>{{artist}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <progress-bar [progress]="currentTrack.progress"></progress-bar>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
 </ion-content>

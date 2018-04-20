@@ -10,8 +10,8 @@ import {PochettePage} from "../pochette/pochette";
 })
 export class HomePage {
   tracks: any;
-    currentTrack: any;
-    progressInterval: any;
+  currentTrack: any;
+  progressInterval: any;
 
     constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
