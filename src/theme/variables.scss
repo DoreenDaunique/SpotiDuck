@@ -56,10 +56,11 @@ $colors: (
   danger:     #f53d3d,
   light:      #fff,
   dark:       #282828,
+  toodark:    #1b1a1a,
   spotiduck:  #1db954
 );
 
-$background-color: map-get($colors, dark);
+$background-color: map-get($colors, toodark);
 $text-color: map-get($colors, light);
 
 // App iOS Variables

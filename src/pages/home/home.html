@@ -35,23 +35,19 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <hr>
     <ion-list no-lines>
-        <button detail-none ion-item *ngFor="let track of tracks; let i = index;" (click)="track.playing ? pauseTrack(track) : playTrack(track)" [ngClass]="{ 'alternate': i % 2, 'playing': track.playing }">
+        <button detail-none ion-item *ngFor="let track of tracks;" (click)="track.playing ? pauseTrack(track) : playTrack(track)" [ngClass]="{ 'playing': track.playing }">
             <p><strong>{{track.title}}</strong></p>
             <p>{{track.artist}}</p>
         </button>
     </ion-list>
-
 </ion-content>
 
 <ion-footer>
   <progress-bar [progress]="currentTrack.progress"></progress-bar>
 
     <ion-grid>
-
-
-
         <ion-row>
           <ion-col col-1>
               <button ion-button clear color="light" (click)="gotoPochette()"> <ion-icon name="arrow-up"></ion-icon></button>
@@ -66,20 +62,6 @@
               <button *ngIf="!currentTrack.playing" (click)="playTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="play"></ion-icon></button>
               <button *ngIf="currentTrack.playing" (click)="pauseTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="pause"></ion-icon></button>
           </ion-col>
-
-            <!-- <ion-col width="33">
-                <button (click)="prevTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-backward-outline"></ion-icon></button>
-            </ion-col>
-
-            <ion-col width="33">
-                <button *ngIf="!currentTrack.playing" (click)="playTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="play-outline"></ion-icon></button>
-                <button *ngIf="currentTrack.playing" (click)="pauseTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="pause-outline"></ion-icon></button>
-            </ion-col>
-
-            <ion-col width="33">
-                <button (click)="nextTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-forward-outline"></ion-icon></button>
-            </ion-col> -->
-
         </ion-row>
 
     </ion-grid>
