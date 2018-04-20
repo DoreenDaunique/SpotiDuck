@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ModalController} from 'ionic-angular';
+import {ViewController} from 'ionic-angular';
+import {NavParams} from 'ionic-angular';
+import {Platform} from 'ionic-angular';
 
 /**
  * Generated class for the PochettePage page.
@@ -10,16 +14,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-pochette',
-  templateUrl: 'pochette.html',
+    selector: 'page-pochette',
+    templateUrl: 'pochette.html',
 })
 export class PochettePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    title: any;
+    artist: any;
+    track: any;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PochettePage');
-  }
+    constructor(public navCtrl: NavController,
+                public navParams: NavParams,
+                public platform: Platform,
+                public params: NavParams,
+                public viewCtrl: ViewController) {
+
+        this.title = this.params.get('title');
+        this.artist = this.params.get('artist');
+        this.track = this.params.get('track');
+    }
+
+    dismiss() {
+        this.viewCtrl.dismiss();
+    }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad PochettePage');
+    }
+
 
 }

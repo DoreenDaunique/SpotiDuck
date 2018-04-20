@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {ModalController} from "ionic-angular";
 
 import {PochettePage} from "../pochette/pochette";
 
@@ -12,7 +13,7 @@ export class HomePage {
     currentTrack: any;
     progressInterval: any;
 
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
         this.tracks = [
             {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
@@ -84,8 +85,11 @@ export class HomePage {
         //     title: this.currentTrack.title,
         //     artist: this.currentTrack.artist
         // });
-        let pochette = this.modalCtrl.create(PochettePage, {'title':currentTrack.title, 'artist':currentTrack.artist,'track':currentTrack});
-        modal.present();
+        let pochette = this.modalCtrl.create(PochettePage, {
+            'title':this.currentTrack.title,
+            'artist':this.currentTrack.artist,
+            'track':this.currentTrack});
+        pochette.present();
     }
 
 }
