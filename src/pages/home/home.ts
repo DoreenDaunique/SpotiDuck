@@ -79,7 +79,11 @@ export class HomePage {
     }
 
     gotoPochette() {
-        this.navCtrl.setRoot(PochettePage);
+        this.navCtrl.setRoot(PochettePage,  {
+            track: this.currentTrack,
+            title: this.currentTrack.title,
+            artist: this.currentTrack.artist
+        });
     }
 
 }
