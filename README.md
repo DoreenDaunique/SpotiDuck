@@ -9,4 +9,8 @@ Livrables: rapport de projet en pdf + identifiant Ionic View
 
 Deadline : 20 Mai 2018 
 
-![Logo DuckCoin](logo-duck.jpg)
+
+
+
+tips: expliquer le projet, ce qu'il doit faire, ce qu'il n'est pas sensé faire.
+
