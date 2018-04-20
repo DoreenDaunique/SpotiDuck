@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {ModalController} from 'ionic-angular';
 import {ViewController} from 'ionic-angular';
-import {NavParams} from 'ionic-angular';
+// import {NavParams} from 'ionic-angular';
 import {Platform} from 'ionic-angular';
 
 /**
