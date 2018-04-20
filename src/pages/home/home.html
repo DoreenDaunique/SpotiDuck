@@ -4,7 +4,7 @@
 
 <ion-content fullscreen>
 
-    <ion-card ion-fixed>
+    <!-- <ion-card ion-fixed>
 
         <ion-card-header>
             {{currentTrack.artist}}
@@ -12,7 +12,7 @@
         <ion-card-content>
             {{currentTrack.title}}
         </ion-card-content>
-    </ion-card>
+    </ion-card> -->
 
     <ion-list no-lines>
         <button detail-none ion-item *ngFor="let track of tracks; let i = index;" (click)="track.playing ? pauseTrack(track) : playTrack(track)" [ngClass]="{ 'alternate': i % 2, 'playing': track.playing }">
@@ -35,8 +35,20 @@
 
 
         <ion-row>
+          <ion-col col-1>
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-col>
 
-            <ion-col width="33">
+          <ion-col col-10 class="info-track">
+            <strong>{{currentTrack.title}}</strong> {{currentTrack.artist}}
+          </ion-col>
+
+          <ion-col col-1>
+              <button *ngIf="!currentTrack.playing" (click)="playTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="play"></ion-icon></button>
+              <button *ngIf="currentTrack.playing" (click)="pauseTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="pause"></ion-icon></button>
+          </ion-col>
+
+            <!-- <ion-col width="33">
                 <button (click)="prevTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-backward-outline"></ion-icon></button>
             </ion-col>
 
@@ -47,7 +59,7 @@
 
             <ion-col width="33">
                 <button (click)="nextTrack()" color="light" clear ion-button icon-only><ion-icon name="skip-forward-outline"></ion-icon></button>
-            </ion-col>
+            </ion-col> -->
 
         </ion-row>
 
