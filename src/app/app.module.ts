@@ -18,11 +18,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from '../providers/user/user';
 import { DckProvider } from '../providers/dck/dck';
 
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
+
 @NgModule({
   declarations: [
     SpotiduckApp,
     HomePage,
     TabsPage,
+    ProgressBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from "ionic-angular"; // On rajoute cette ligne
-import { TransactionComponent } from './transaction/transaction';
+import { ProgressBarComponent } from './progress-bar/progress-bar';
 @NgModule({
-	declarations: [TransactionComponent],
+	// declarations: [ProgressBarComponent],
 	imports: [IonicModule], // ...Et celle-ci
-	exports: [TransactionComponent]
+	// exports: [ProgressBarComponent]
 })
 export class ComponentsModule {}

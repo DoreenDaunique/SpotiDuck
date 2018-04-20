@@ -1,9 +1,0 @@
-<ion-list>
-  <ion-list-header text-center>
-    Dernières transactions
-  </ion-list-header>
-  <button ion-item *ngFor="let transact of transactions">
-    <span bolder>{{transact.recipient | uppercase}}</span>
-    a reçu {{transact.amount | currency:'€'}} de {{transact.sender | uppercase}}
-  </button>
-</ion-list>
