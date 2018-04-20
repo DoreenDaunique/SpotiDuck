@@ -48,9 +48,28 @@
         ion-footer {
             height: 75px;
             background-color: map-get($colors, dark);
+            color: #fff;
 
             ion-grid, ion-row, ion-col {
                 height: 100%;
+            }
+            .info-track {
+              strong {
+                display: inline-block;
+                padding-right: 20px;
+                position: relative;
+                &::after {
+                  content: '';
+                  position: absolute;
+                  right: 7px;
+                  top: 7px;
+                  width: 5px;
+                  height: 5px;
+                  background-color: #fff;
+                  display: inline-block;
+                  border-radius: 50%;
+                }
+              }
             }
 
             ion-col {
