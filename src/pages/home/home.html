@@ -50,7 +50,7 @@
     <ion-grid>
         <ion-row>
           <ion-col col-1>
-              <button ion-button clear color="light" (click)="gotoPochette()"> <ion-icon name="arrow-up"></ion-icon></button>
+              <button ion-button clear color="light" (click)="gotoPochette({'title':currentTrack.title, 'artist':currentTrack.artist,'track':currentTrack})"> <ion-icon name="arrow-up"></ion-icon></button>
 
           </ion-col>
 

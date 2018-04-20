@@ -79,11 +79,13 @@ export class HomePage {
     }
 
     gotoPochette() {
-        this.navCtrl.setRoot(PochettePage,  {
-            track: this.currentTrack,
-            title: this.currentTrack.title,
-            artist: this.currentTrack.artist
-        });
+        // this.navCtrl.setRoot(PochettePage,  {
+        //     track: this.currentTrack,
+        //     title: this.currentTrack.title,
+        //     artist: this.currentTrack.artist
+        // });
+        let pochette = this.modalCtrl.create(PochettePage, {'title':currentTrack.title, 'artist':currentTrack.artist,'track':currentTrack});
+        modal.present();
     }
 
 }
