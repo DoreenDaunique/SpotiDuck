@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { SmartAudio } from '../../providers/smart-audio';
 
 import { HomePage } from '../home/home';
 
@@ -12,7 +13,12 @@ export class TabsPage {
   tab1Root = HomePage;
 
 
-  constructor() {
+    constructor(public smartAudio: SmartAudio) {
 
-  }
+    }
+
+    changeTab() {
+        this.smartAudio.play('tabSwitch');
+    }
+
 }
