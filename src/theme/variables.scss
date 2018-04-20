@@ -23,11 +23,11 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 $max-width: 400px;
-$tabs-ios-tab-color-active:#df4932;
-$tabs-md-tab-color-active:#df4932;
-$fab-ios-background-color:#df4932;
-$fab-md-background-color:#df4932;
-$fab-ios-list-button-text-color:#df4932;
+$tabs-ios-tab-color-active:#1db954;
+$tabs-md-tab-color-active:#1db954;
+$fab-ios-background-color:#1db954;
+$fab-md-background-color:#1db954;
+$fab-ios-list-button-text-color:#1db954;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -43,8 +43,8 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  duckcoin: (
-    base: #df4932,
+  spotiduck: (
+    base: #1db954,
     contrast: #fff
   )
 );

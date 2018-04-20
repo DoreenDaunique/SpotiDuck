@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { DuckCoinApp } from './app.component';
+import { SpotiduckApp } from './app.component';
 
 //Modules
 import {ComponentsModule} from '../components/components.module';
@@ -10,11 +10,7 @@ import {PipesModule} from '../pipes/pipes.module';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MiningPage } from '../pages/mining/mining';
-import { WalletPage } from '../pages/wallet/wallet';
 import { HomePage } from '../pages/home/home';
-import { ProfilePage } from '../pages/profile/profile'; // On importe la nouvelle page ICI
-import { SettingPage } from '../pages/setting/setting'; // On importe la nouvelle page ICI
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,12 +20,8 @@ import { DckProvider } from '../providers/dck/dck';
 
 @NgModule({
   declarations: [
-    DuckCoinApp,
-    MiningPage,
-    WalletPage,
+    SpotiduckApp,
     HomePage,
-    SettingPage,
-    ProfilePage, // On la déclare ici
     TabsPage,
   ],
   imports: [
@@ -37,7 +29,7 @@ import { DckProvider } from '../providers/dck/dck';
     HttpClientModule,
     ComponentsModule,
     DirectivesModule,
-    IonicModule.forRoot(DuckCoinApp,{
+    IonicModule.forRoot(SpotiduckApp,{
         // tabsPlacement: 'top',
         backButtonText: 'Retour'
     }),
@@ -48,12 +40,8 @@ import { DckProvider } from '../providers/dck/dck';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    DuckCoinApp,
-    MiningPage,
-    WalletPage,
+    SpotiduckApp,
     HomePage,
-    SettingPage,
-    ProfilePage, // Et là
     TabsPage
   ],
   providers: [
