@@ -1,3 +1,7 @@
 <ion-tabs>
+  <ion-tab (ionSelect)="changeTab"  [root]="tab2Root" tabTitle="Login" tabIcon="person"></ion-tab>
   <ion-tab (ionSelect)="changeTab"  [root]="tab1Root" tabTitle="Accueil" tabIcon="home"></ion-tab>
+  <ion-tab (ionSelect)="changeTab"  [root]="tab3Root" tabTitle="PlayList" tabIcon="albums"></ion-tab>
+  <ion-tab (ionSelect)="changeTab"  [root]="tab4Root" tabTitle="Pochette" tabIcon="download"></ion-tab>
+
 </ion-tabs>

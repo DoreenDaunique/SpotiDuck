@@ -5,6 +5,9 @@ import {SpotiduckApp} from './app.component';
 
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
+import {LoginPage} from "../pages/login/login";
+import {PlaylistPage} from "../pages/playlist/playlist";
+import {PochettePage} from "../pages/pochette/pochette";
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -31,6 +34,9 @@ import {SmartAudio} from "../providers/smart-audio/smart-audio";
         HomePage,
         TabsPage,
         ProgressBarComponent,
+        LoginPage,
+        PlaylistPage,
+        PochettePage,
     ],
     imports: [
         BrowserModule,
@@ -50,7 +56,10 @@ import {SmartAudio} from "../providers/smart-audio/smart-audio";
     entryComponents: [
         SpotiduckApp,
         HomePage,
-        TabsPage
+        TabsPage,
+        LoginPage,
+        PlaylistPage,
+        PochettePage,
     ],
     providers: [
         StatusBar,
