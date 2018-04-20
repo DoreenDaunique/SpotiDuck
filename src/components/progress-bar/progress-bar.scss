@@ -4,7 +4,7 @@ progress-bar {
         width: 100%;
         padding: 1px;
         text-align: center;
-        background-color: map-get($colors, light);
+        background-color: lighten(map-get($colors, dark),5%);
         color: #fff;
     }
 
@@ -12,8 +12,8 @@ progress-bar {
         min-width: 1%;
         white-space: nowrap;
         overflow: hidden;
-        padding: 2px;
-        background-color: map-get($colors, dark);
+        padding: 1px;
+        background-color: map-get($colors, light);
     }
 
 }

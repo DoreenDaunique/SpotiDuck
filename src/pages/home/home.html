@@ -3,25 +3,43 @@
 </ion-header>
 
 <ion-content fullscreen>
-
-    <!-- <ion-card ion-fixed>
-
-        <ion-card-header>
-            {{currentTrack.artist}}
-        </ion-card-header>
-        <ion-card-content>
-            {{currentTrack.title}}
-        </ion-card-content>
-    </ion-card> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1>
+        <button clear ion-button icon-only color="light">
+          <ion-icon name="arrow-up"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-11 color="light">
+        <h5 text-center color="light">Nom de la playlist</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-img  width="150" height="150" src="https://i.scdn.co/image/040d9df38de7966d150b8495c0dc466b7d2950d9"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <h2 text-center>Nom de la playlist</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button round outline color="spotiduck" class="abo">S'abonner</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <span>XXX abonnés</span><span class="rond"></span><span>Par auteur</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
     <ion-list no-lines>
         <button detail-none ion-item *ngFor="let track of tracks; let i = index;" (click)="track.playing ? pauseTrack(track) : playTrack(track)" [ngClass]="{ 'alternate': i % 2, 'playing': track.playing }">
-            <ion-avatar item-left>
-                <img [src]="'https://api.adorable.io/avatars/75/' + track.artist">
-                <ion-spinner item-right *ngIf="track.playing" name="bubbles" item-left></ion-spinner>
-            </ion-avatar>
-            <h2>{{track.artist}}</h2>
-            <p>{{track.title}}</p>
+            <p><strong>{{track.title}}</strong></p>
+            <p>{{track.artist}}</p>
         </button>
     </ion-list>
 

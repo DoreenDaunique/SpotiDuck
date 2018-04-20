@@ -21,3 +21,18 @@
 ion-fab[bottom] {
     bottom: 50px;
 }
+
+button {
+  text-transform: uppercase;
+}
+
+span.rond {
+  width: 5px;
+  height: 5px;
+  margin: 0 10px;
+  bottom: 3px;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+}
