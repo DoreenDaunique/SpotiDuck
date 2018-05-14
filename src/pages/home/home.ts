@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {ModalController} from "ionic-angular";
 
+
+
 import {PochettePage} from "../pochette/pochette";
+import {NativeAudio} from "@ionic-native/native-audio";
 
 @Component({
   selector: 'page-home',
@@ -13,7 +16,7 @@ export class HomePage {
   currentTrack: any;
   progressInterval: any;
 
-    constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+    constructor(public navCtrl: NavController, public modalCtrl: ModalController,private nativeAudio: NativeAudio) {
 
         this.tracks = [
             {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
@@ -28,6 +31,15 @@ export class HomePage {
 
         this.currentTrack = this.tracks[0];
 
+    }
+
+    ionViewWillEnter() {
+        this.nativeAudio.preloadSimple('Shine', './music/Shine.mp3').then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
+        });
     }
 
     playTrack(track){
@@ -45,6 +57,8 @@ export class HomePage {
         track.playing = true;
         this.currentTrack = track;
 
+        this.nativeAudio.play('Shine', () => console.log('uniqueId1 is done playing'));
+
         // Simulate track playing
         this.progressInterval = setInterval(() => {
 
@@ -57,6 +71,12 @@ export class HomePage {
     pauseTrack(track){
 
         track.playing = false;
+        this.nativeAudio.stop('Shine').then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
+        });
         clearInterval(this.progressInterval);
 
     }
