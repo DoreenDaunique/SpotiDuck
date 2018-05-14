@@ -9,8 +9,8 @@ Livrables: rapport de projet en pdf + identifiant Ionic View
 
 Deadline : 20 Mai 2018
 
+mail où envoyer le travail : charles@charlesen.fr
 
 
 
 tips: expliquer le projet, ce qu'il doit faire, ce qu'il n'est pas sensé faire.
-
