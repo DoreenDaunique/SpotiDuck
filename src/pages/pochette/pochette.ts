@@ -25,6 +25,7 @@ export class PochettePage {
     title: any;
     artist: any;
     track: any;
+    progressBar: any;
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
@@ -35,6 +36,7 @@ export class PochettePage {
         this.title = this.params.get('title');
         this.artist = this.params.get('artist');
         this.track = this.params.get('track');
+        this.progressBar = this.params.get('progressBar');
 
         this.tracks = [
             {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
@@ -50,14 +52,19 @@ export class PochettePage {
         this.currentTrack = this.tracks[0];
     }
 
+    ionViewWillEnter() {
+        this.playTrack(this.currentTrack);
+    }
 
-    playTrack(track){
+
+
+    playTrack(track) {
 
         // First stop any currently playing tracks
 
-        for(let checkTrack of this.tracks){
+        for (let checkTrack of this.tracks) {
 
-            if(checkTrack.playing){
+            if (checkTrack.playing) {
                 this.pauseTrack(checkTrack);
             }
 
@@ -69,20 +76,20 @@ export class PochettePage {
         // Simulate track playing
         this.progressInterval = setInterval(() => {
 
-            track.progress < 100 ? track.progress++ : track.progress = 0;
+            this.progressBar < 100 ? this.progressBar++ : this.progressBar = 0;
 
         }, 1000);
 
     }
 
-    pauseTrack(track){
+    pauseTrack(track) {
 
         track.playing = false;
         clearInterval(this.progressInterval);
 
     }
 
-    nextTrack(){
+    nextTrack() {
 
         let index = this.tracks.indexOf(this.currentTrack);
         index >= this.tracks.length - 1 ? index = 0 : index++;
@@ -91,7 +98,7 @@ export class PochettePage {
 
     }
 
-    prevTrack(){
+    prevTrack() {
 
         let index = this.tracks.indexOf(this.currentTrack);
         index > 0 ? index-- : index = this.tracks.length - 1;

@@ -88,7 +88,9 @@ export class HomePage {
         let pochette = this.modalCtrl.create(PochettePage, {
             'title':this.currentTrack.title,
             'artist':this.currentTrack.artist,
-            'track':this.currentTrack});
+            'track':this.currentTrack,
+            'progressBar':this.currentTrack.progress
+        });
         pochette.present();
     }
 
