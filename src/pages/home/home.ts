@@ -15,6 +15,7 @@ export class HomePage {
   tracks: any;
   currentTrack: any;
   progressInterval: any;
+  soundLoaded: any;
 
     constructor(public navCtrl: NavController, public modalCtrl: ModalController,private nativeAudio: NativeAudio) {
 
