@@ -34,21 +34,33 @@ export class HomePage {
 
     }
 
-    // ionViewWillEnter() {
-    //     this.nativeAudio.preloadSimple('Shine', 'assets/music/Shine.mp3').then(onSuccess => {
-    //         this.soundLoaded = true;
-    //         console.log('preloadSimple : ' + onSuccess);
-    //     }, onError => {
-    //         console.error('preloadSimple : ' + onError);
-    //     });
-    //     this.nativeAudio.play('Shine', () => console.log('uniqueId1 is done playing'));
-    // }
-    ionViewDidLoad() {
-        this.nativeAudio.preloadComplex('newOder', 'assets/music/Shine.mp3', 1, 1, 0).then(() => {
-            this.nativeAudio.play('newOder');
-            this.nativeAudio.loop('newOder');
+    ionViewWillEnter() {
+        this.nativeAudio.preloadComplex('Something About You', 'assets/music/Shine.mp3',1, 1, 0).then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
+        });
+        this.nativeAudio.preloadComplex('Run', 'assets/music/Caramelo.mp3',1, 1, 0).then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
+        });
+        this.nativeAudio.preloadComplex('Breathe', 'assets/music/Hang.mp3',1, 1, 0).then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
+        });
+        this.nativeAudio.preloadComplex('HyperParadise', 'assets/music/Ocean.mp3',1, 1, 0).then(onSuccess => {
+            this.soundLoaded = true;
+            console.log('preloadSimple : ' + onSuccess);
+        }, onError => {
+            console.error('preloadSimple : ' + onError);
         });
     }
+
 
     playTrack(track){
 
@@ -65,7 +77,7 @@ export class HomePage {
         track.playing = true;
         this.currentTrack = track;
 
-        this.nativeAudio.play('Shine', () => console.log('uniqueId1 is done playing'));
+        this.nativeAudio.play( track.title, () => console.log('uniqueId1 is done playing'));
 
         // Simulate track playing
         this.progressInterval = setInterval(() => {
@@ -79,7 +91,8 @@ export class HomePage {
     pauseTrack(track){
 
         track.playing = false;
-        this.nativeAudio.stop('Shine').then(onSuccess => {
+
+        this.nativeAudio.stop(track.title).then(onSuccess => {
             this.soundLoaded = true;
             console.log('preloadSimple : ' + onSuccess);
         }, onError => {
@@ -108,11 +121,6 @@ export class HomePage {
     }
 
     gotoPochette() {
-        // this.navCtrl.setRoot(PochettePage,  {
-        //     track: this.currentTrack,
-        //     title: this.currentTrack.title,
-        //     artist: this.currentTrack.artist
-        // });
         let pochette = this.modalCtrl.create(PochettePage, {
             'title':this.currentTrack.title,
             'artist':this.currentTrack.artist,
