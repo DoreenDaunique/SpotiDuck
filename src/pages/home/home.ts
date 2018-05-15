@@ -34,12 +34,19 @@ export class HomePage {
 
     }
 
-    ionViewWillEnter() {
-        this.nativeAudio.preloadSimple('Shine', './music/Shine.mp3').then(onSuccess => {
-            this.soundLoaded = true;
-            console.log('preloadSimple : ' + onSuccess);
-        }, onError => {
-            console.error('preloadSimple : ' + onError);
+    // ionViewWillEnter() {
+    //     this.nativeAudio.preloadSimple('Shine', 'assets/music/Shine.mp3').then(onSuccess => {
+    //         this.soundLoaded = true;
+    //         console.log('preloadSimple : ' + onSuccess);
+    //     }, onError => {
+    //         console.error('preloadSimple : ' + onError);
+    //     });
+    //     this.nativeAudio.play('Shine', () => console.log('uniqueId1 is done playing'));
+    // }
+    ionViewDidLoad() {
+        this.nativeAudio.preloadComplex('newOder', 'assets/music/Shine.mp3', 1, 1, 0).then(() => {
+            this.nativeAudio.play('newOder');
+            this.nativeAudio.loop('newOder');
         });
     }
 

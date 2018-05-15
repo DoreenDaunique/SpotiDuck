@@ -20,7 +20,7 @@ export class SpotiduckApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      smartAudio.preload('tabSwitch', 'assets/audio/clickSound.mp3');
+      // smartAudio.preload('tabSwitch', 'assets/audio/clickSound.mp3');
     });
   }
 }
