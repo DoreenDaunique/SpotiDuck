@@ -20,10 +20,10 @@ export class HomePage {
     constructor(public navCtrl: NavController, public modalCtrl: ModalController,private nativeAudio: NativeAudio) {
 
         this.tracks = [
-            {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
-            {title: 'Run', artist: 'Allison Wonderland', playing: false, progress: 0},
-            {title: 'Breathe', artist: 'Seeb Neev', playing: false, progress: 0},
-            {title: 'HyperParadise', artist: 'Hermitude', playing: false, progress: 0},
+            {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0, timer: 247000},
+            {title: 'Run', artist: 'Allison Wonderland', playing: false, progress: 0,timer: 150000},
+            {title: 'Breathe', artist: 'Seeb Neev', playing: false, progress: 0, timer: 226000},
+            {title: 'HyperParadise', artist: 'Hermitude', playing: false, progress: 0, timer :576000},
             {title: 'Lifespan', artist: 'Vaults', playing: false, progress: 0},
             {title: 'Stay High', artist: 'Tove Lo', playing: false, progress: 0},
             {title: 'Lean On', artist: 'Major Lazer', playing: false, progress: 0},
@@ -77,12 +77,12 @@ export class HomePage {
         track.playing = true;
         this.currentTrack = track;
 
-        this.nativeAudio.play( track.title, () => console.log('uniqueId1 is done playing'));
+        this.nativeAudio.play( track.title, () => console.log('music is done playing'));
 
         // Simulate track playing
         this.progressInterval = setInterval(() => {
 
-            track.progress < 100 ? track.progress++ : track.progress = 0;
+            track.progress < track.timer ? track.progress++ : track.progress = 0;
 
         }, 1000);
 
