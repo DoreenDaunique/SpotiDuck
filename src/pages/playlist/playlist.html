@@ -11,5 +11,39 @@
 
 
 <ion-content padding>
-
+    <ion-row>
+        <ion-col text-center>
+            <ion-img  width="300" height="300" src="https://i.scdn.co/image/040d9df38de7966d150b8495c0dc466b7d2950d9"></ion-img>
+        </ion-col>
+        <ion-col text-center>
+            <ion-img  width="300" height="300" src="https://i.scdn.co/image/040d9df38de7966d150b8495c0dc466b7d2950d9"></ion-img>
+        </ion-col>
+        <ion-col text-center>
+            <ion-img  width="300" height="300" src="https://i.scdn.co/image/040d9df38de7966d150b8495c0dc466b7d2950d9"></ion-img>
+        </ion-col>
+    </ion-row>
 </ion-content>
+
+<ion-footer>
+    <progress-bar [progress]="currentTrack.progress"></progress-bar>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-1>
+                <button ion-button clear color="light" (click)="gotoPochette({'title':currentTrack.title, 'artist':currentTrack.artist,'track':currentTrack})"> <ion-icon name="arrow-up"></ion-icon></button>
+
+            </ion-col>
+
+            <ion-col col-10 class="info-track">
+                <strong>{{currentTrack.title}}</strong> {{currentTrack.artist}}
+            </ion-col>
+
+            <ion-col col-1>
+                <button *ngIf="!currentTrack.playing" (click)="playTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="play"></ion-icon></button>
+                <button *ngIf="currentTrack.playing" (click)="pauseTrack(currentTrack)" color="light" clear ion-button icon-only><ion-icon name="pause"></ion-icon></button>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-footer>
