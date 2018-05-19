@@ -1,3 +1,15 @@
 page-playlist {
-
+  h6 {
+    font-size: 12px;
+    padding-top:5px;
+    margin-top: 0;
+  }
+  ion-header {
+    ion-title {
+      h1 {
+        color: map-get($colors,light);
+        padding:0;
+      }
+    }
+  }
 }
