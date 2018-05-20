@@ -26,6 +26,7 @@ import {DckProvider} from '../providers/dck/dck';
 
 import {ProgressBarComponent} from '../components/progress-bar/progress-bar';
 import {SmartAudio} from "../providers/smart-audio/smart-audio";
+import { SpotifyProvider } from '../providers/spotify/spotify';
 // import {SmartAudioProvider} from '../providers/smart-audio/smart-audio';
 
 @NgModule({
@@ -70,6 +71,7 @@ import {SmartAudio} from "../providers/smart-audio/smart-audio";
         // SmartAudioProvider,
         NativeAudio,
         SmartAudio,
+    SpotifyProvider,
     ]
 })
 export class AppModule {

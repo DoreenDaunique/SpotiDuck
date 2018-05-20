@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
+import {SpotifyProvider} from "../../providers/spotify/spotify";
 
 
 declare var window: any;
+// declare var http: HttpClient;
 /**
  * Generated class for the LoginPage page.
  *
@@ -18,7 +19,7 @@ declare var window: any;
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public platform: Platform) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform, public spotifyProvider: SpotifyProvider) {
   }
 
   ionViewDidLoad() {
@@ -26,42 +27,7 @@ export class LoginPage {
   }
 
   public login() {
-    this.platform.ready()
-      .then(this.spotifyLogin)
-      .then(success => {
-        alert('win');
-      }, (error) => {
-        alert(error);
-      });
+    this.spotifyProvider.spotifyLogin();
   };
-
-  public spotifyLogin(): Promise<any> {
-    return new Promise(function(resolve, reject) {
-      const clientId = "24db18af2b81458f862fa8e3981b1543";
-      const scopes = 'user-read-private user-read-email';
-      const url = 'https://accounts.spotify.com/authorize' +
-        '?response_type=code' +
-        '&client_id=' + clientId +
-        (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-        '&redirect_uri=' + encodeURIComponent('http://localhost/callback');
-      const browserRef = window.cordova.InAppBrowser.open(
-        url,
-        "_blank",
-        "location=no, clearsessioncache=yes, clearcache=yes"
-      );
-      let responseParams : string;
-      let parsedResponse : Object = {};
-      browserRef.addEventListener("loadstart", (evt) => {
-        if((evt.url).indexOf("http://localhost/callback") === 0) {
-          browserRef.removeEventListener("exit", (evt) => {});
-          browserRef.close();
-          alert(evt);
-        }
-      });
-      browserRef.addEventListener("exit", function(evt) {
-        reject("Une erreur est survenue lors de la tentative de connexion à Spotify");
-      });
-    });
-  }
 
 }
